@@ -1,0 +1,18 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Our private planning & memory docs — kept local, not shared on the remote (README.md stays public).
+/INTENT.md
+/PLAN.md
+/CLAUDE.md
+/MEMORY.md
+/DESIGN.md
+/memory/
