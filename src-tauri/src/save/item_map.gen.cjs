@@ -21,6 +21,7 @@ if (!CP) { console.error('usage: node item_map.gen.cjs <tbh-copilot-clone>'); pr
 const DB = require(CP + '/engine/gamedata.js');
 const GN = require(CP + '/engine/gearnames.js');
 const MF = require(CP + '/engine/materialfx.js');
+const IN = require(CP + '/engine/itemnames.js');
 const TRADE_NOW = new Set(['Legendary', 'Immortal', 'Arcana', 'Beyond']);
 const norm = gr => gr ? gr.charAt(0) + gr.slice(1).toLowerCase() : gr;
 
@@ -28,6 +29,24 @@ const material = {};
 for (const m of MF) {
   const it = DB.items[String(m.key)];
   material[String(m.key)] = { name: m.name, type: m.type, icon: it && it.icon, grade: m.grade };
+}
+
+// Non-fx materials — crafting mats (ingots/ores), offering coins, and soulstones — aren't in materialfx
+// but ARE listed on Steam, so the stash must value them too. Bridge every named one; the `type` here is
+// the Sell Advisor's stash-filter label, derived from the id band (materials carry no fx class). Nameless
+// ids (e.g. 150xxx) can't form a market_hash_name and are skipped — graceful, same as unknown gear.
+const matFilter = key => {
+  const band = String(key).slice(0, 2);
+  if (band === '16') return 'Coin';
+  if (band === '19') return 'Soulstone';
+  return 'Crafting';
+};
+for (const k in DB.items) {
+  const it = DB.items[k];
+  if (it.type !== 'MATERIAL' || material[k]) continue;
+  const name = IN[k] && IN[k]['en-US'];
+  if (!name) continue;
+  material[k] = { name, type: matFilter(k), icon: it.icon, grade: norm(it.grade) };
 }
 
 const gear = {};

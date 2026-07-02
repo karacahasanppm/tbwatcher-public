@@ -1,6 +1,6 @@
 {
   "name": "tbwatcher",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Lightweight pixel-art Steam Community Market companion for TBH: Task Bar Hero.",
   "private": true,
   "type": "module",

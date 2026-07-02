@@ -30,7 +30,7 @@
 
   // Stash filter (a view lens — never a re-scan). "all" plus the categories actually present, in a fixed
   // order so the chips don't reshuffle between scans.
-  const CAT_ORDER = ["Wearable", "Decoration", "Engraving", "Inscription"];
+  const CAT_ORDER = ["Wearable", "Coin", "Soulstone", "Crafting", "Decoration", "Engraving", "Inscription"];
   let filter = $state("all");
   const cats = $derived.by(() => {
     const present = new Set(advisor?.entries.map((e) => e.category));
