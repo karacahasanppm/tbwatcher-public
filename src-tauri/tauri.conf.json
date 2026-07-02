@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "tbwatcher",
+  "version": "0.4.0",
+  "identifier": "com.tbwatcher.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "tbwatcher",
+        "width": 460,
+        "height": 720,
+        "minWidth": 380,
+        "minHeight": 560
+      },
+      {
+        "label": "stash",
+        "title": "tbwatcher — stash",
+        "width": 900,
+        "height": 680,
+        "minWidth": 560,
+        "minHeight": 420,
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "Hasan Karaca",
+    "copyright": "© 2026 TBHWATCHER by Hasan Karaca",
+    "category": "Utility",
+    "shortDescription": "Live Steam Market prices & sell insights for TBH: Task Bar Hero.",
+    "longDescription": "A lightweight pixel-art companion for TBH: Task Bar Hero — live Steam Community Market prices, a personal watchlist with price-history charts, public-inventory portfolio with alerts, and a read-only stash valuation that tells you what's best to list. Free to use; runs quietly in the tray.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser"
+      },
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    }
+  }
+}
