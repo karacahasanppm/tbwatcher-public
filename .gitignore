@@ -1,0 +1,15 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+# Packaged installers for a release (both variants). Distributed via GitHub Releases, not tracked in git.
+/releases
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Planning & memory docs are tracked in this PRIVATE repo (versioned + backed up); they are excluded from
+# the PUBLIC demo/release snapshot at snapshot-build time (git rm --cached on the orphan branch), not here.
