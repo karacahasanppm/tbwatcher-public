@@ -1,0 +1,16 @@
+{
+  "assets": [
+    {"appid":3678970,"contextid":"2","assetid":"100","classid":"1001","instanceid":"0","amount":"5"},
+    {"appid":3678970,"contextid":"2","assetid":"101","classid":"1001","instanceid":"0","amount":"3"},
+    {"appid":3678970,"contextid":"2","assetid":"102","classid":"1002","instanceid":"0","amount":"1"},
+    {"appid":3678970,"contextid":"2","assetid":"103","classid":"1003","instanceid":"0","amount":"2"}
+  ],
+  "descriptions": [
+    {"appid":3678970,"classid":"1001","instanceid":"0","market_hash_name":"Soulstone - Torment","name":"Soulstone - Torment","type":"Soulstone","icon_url":"soulIcon","tradable":1,"marketable":1,"name_color":"D2D2D2"},
+    {"appid":3678970,"classid":"1002","instanceid":"0","market_hash_name":"Phantom Emerald","name":"Phantom Emerald","type":"Gem","icon_url":"emeraldIcon","tradable":1,"marketable":1,"name_color":"6699CC"},
+    {"appid":3678970,"classid":"1003","instanceid":"0","market_hash_name":"Bound Trinket","name":"Bound Trinket","type":"Trinket","icon_url":"boundIcon","tradable":0,"marketable":0,"name_color":"B0B0B0"}
+  ],
+  "total_inventory_count":11,
+  "success":1,
+  "rwgrsn":-2
+}
